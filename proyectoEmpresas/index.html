@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protect4Life - Protección para ti, para otros y para siempre.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #cdde00;
+            --brand-black: #000000;
+            --brand-dark-gray: #1a1a1a;
+            --brand-light-gray: #e5e5e5;
+            --brand-gray: #2a2a2a;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--brand-black);
+            color: var(--brand-light-gray);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-bold { font-weight: 700; }
+        .font-light { font-weight: 300; }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .text-brand-green { color: var(--brand-green); }
+        .border-brand-green { border-color: var(--brand-green); }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: var(--brand-green);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover { color: var(--brand-green); }
+        .nav-link:hover::after { width: 100%; }
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(205, 222, 0, 0.5);
+        }
+        .feature-card { transition: transform 0.3s ease; }
+        .feature-card:hover { transform: translateY(-8px); }
+        .product-card {
+             background-color: var(--brand-dark-gray);
+             border: 1px solid var(--brand-gray);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header-nav" class="bg-black/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-300 h-24">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-full">
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center space-x-2">
+                        <!-- Reemplaza este placeholder con tu logo. Ej: src="/imagenes/logo.png" -->
+                        <img class="h-10 w-auto" src="https://placehold.co/150x40/000000/cdde00?text=Protect4Life" alt="Logo de Protect4Life">
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#porque-protect4life" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300">¿Por qué Protect4Life?</a>
+                        <a href="#productos" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300">Productos y Servicios</a>
+                        <a href="#impacto-social" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300">Impacto Social</a>
+                        <a href="#garantia" class="nav-link px-3 py-2 rounded-md text-base font-medium text-gray-300">Garantía de por vida</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <svg class="block h-6 w-6" id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-black/80 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#porque-protect4life" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">¿Por qué Protect4Life?</a>
+                <a href="#productos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Productos y Servicios</a>
+                <a href="#impacto-social" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Impacto Social</a>
+                <a href="#garantia" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Garantía de por vida</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center items-center text-center pt-24 pb-10 px-4">
+            <div class="w-full">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">Tu celular, protegido con<br>ciencia y consciencia.</h1>
+                <p class="font-light mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
+                    Mica profesional con garantía de por vida, carcasa a medida y software de protección de identidad. Sin empaques, sin residuos, y con impacto positivo.
+                </p>
+                <a href="#productos" class="cta-button mt-10 inline-block bg-brand-green text-black font-bold py-3 px-8 rounded-full text-lg">
+                    Descubre la diferencia
+                </a>
+            </div>
+            <!-- Imagen del producto principal -->
+            <div class="mt-8 w-full px-4">
+                 <img src="/imagenes/iphone2.png" alt="Mica Protect4Life instalada en un smartphone" class="max-w-4xl w-full mx-auto">
+            </div>
+        </section>
+
+        <!-- ¿Por qué Protect4Life? Section -->
+        <section id="porque-protect4life" class="py-20 md:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">Protección total en 4 pilares.</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <!-- Pilar 1: Física -->
+                    <div class="feature-card text-center p-6">
+                         <img src="/imagenes/escudo.png" class="mx-auto mb-4 h-16 w-16" alt="Icono de protección física">
+                        <h3 class="text-xl font-bold mb-2">Protección Física Premium</h3>
+                        <p class="font-light text-gray-400">Micas multicapa con nanotecnología y carcasas a medida. Instalación por expertos y garantía de por vida.</p>
+                    </div>
+                    <!-- Pilar 2: Digital -->
+                    <div class="feature-card text-center p-6">
+                        <img src="/imagenes/candado.png" class="mx-auto mb-4 h-16 w-16" alt="Icono de protección digital">
+                        <h3 class="text-xl font-bold mb-2">Seguridad Digital</h3>
+                        <p class="font-light text-gray-400">Licencia de software premium incluida para proteger tu identidad, datos y navegación.</p>
+                    </div>
+                    <!-- Pilar 3: Ecológica -->
+                    <div class="feature-card text-center p-6">
+                        <img src="/imagenes/arbol.png" class="mx-auto mb-4 h-16 w-16" alt="Icono de conciencia ecológica">
+                        <h3 class="text-xl font-bold mb-2">Conciencia Ecológica</h3>
+                        <p class="font-light text-gray-400">Sin empaques innecesarios y hasta 70% de materiales reciclados. Extendemos la vida de tus dispositivos.</p>
+                    </div>
+                    <!-- Pilar 4: Social -->
+                    <div class="feature-card text-center p-6">
+                        <img src="/imagenes/corazon.png" class="mx-auto mb-4 h-16 w-16" alt="Icono de impacto social">
+                        <h3 class="text-xl font-bold mb-2">Impacto Social Real</h3>
+                        <p class="font-light text-gray-400">Un porcentaje de tu compra apoya a fundaciones que combaten la trata infantil y promueven la educación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos y Servicios Section -->
+        <section id="productos" class="py-20 md:py-32 bg-brand-dark-gray">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Productos y Servicios</h2>
+                <p class="text-center text-lg text-gray-300 max-w-2xl mx-auto mb-16">Soluciones a la medida para una protección sin concesiones.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="product-card rounded-2xl p-8 flex flex-col">
+                        <h3 class="text-2xl font-bold">Micas Esenciales</h3>
+                        <p class="font-light text-gray-400 mt-2 flex-grow">HD, Mate y BlueRay. La mejor tecnología para el cuidado diario de tu pantalla.</p>
+                        <p class="text-3xl font-bold mt-6 text-brand-green">$399 <span class="text-sm font-light text-gray-400">MXN</span></p>
+                    </div>
+                    <div class="product-card rounded-2xl p-8 flex flex-col">
+                        <h3 class="text-2xl font-bold">Micas Premium</h3>
+                        <p class="font-light text-gray-400 mt-2 flex-grow">Cristal, Privacidad y Alto Impacto. Máxima resistencia y funciones avanzadas para tu tranquilidad.</p>
+                        <p class="text-3xl font-bold mt-6 text-brand-green">$599 <span class="text-sm font-light text-gray-400">MXN</span></p>
+                    </div>
+                    <div class="product-card rounded-2xl p-8 flex flex-col bg-brand-green text-black">
+                        <h3 class="text-2xl font-bold">Garantía de por Vida</h3>
+                        <p class="font-light mt-2 flex-grow">Cobertura total, reemplazo inmediato y software de seguridad digital premium incluido.</p>
+                        <p class="text-3xl font-bold mt-6">$175 <span class="text-sm font-light">MXN</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Impacto Social Section -->
+        <section id="impacto-social" class="py-20 md:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div>
+                         <h2 class="text-3xl md:text-5xl font-bold leading-tight">Tu compra genera un cambio.</h2>
+                         <p class="font-light mt-6 text-lg text-gray-300">No solo protegemos dispositivos, protegemos futuros. Un porcentaje de cada venta se destina a la Fundación Freedom para combatir la trata y explotación de niñas y niños en México. Tu elección tiene un impacto real y medible.</p>
+                         <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <p class="text-4xl font-bold text-brand-green">21,000</p>
+                                <p class="font-light text-gray-400">niños y niñas son captados para explotación en México al año.</p>
+                            </div>
+                            <div>
+                                <p class="text-4xl font-bold text-brand-green">SOLO 1</p>
+                                <p class="font-light text-gray-400">de cada 100 volverá a casa.</p>
+                            </div>
+                         </div>
+                         <a href="#" class="cta-button mt-10 inline-block border border-brand-green text-brand-green font-bold py-3 px-8 rounded-full text-lg">
+                            Conoce más de la causa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Garantía de por vida Section -->
+        <section id="garantia" class="py-20 md:py-32 bg-brand-dark-gray">
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold">Garantía de por Vida.</h2>
+                <p class="font-light mt-4 max-w-3xl mx-auto text-lg text-gray-300">Tranquilidad que dura para siempre. Si tu mica se daña, la reemplazamos. Sin letras pequeñas, sin complicaciones. Es nuestro compromiso contigo.</p>
+                <!-- La imagen fue removida como solicitaste -->
+             </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-black border-t border-brand-gray">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h4 class="text-lg font-bold inline-block">Protect<span class="text-brand-green">4Life</span></h4>
+                    <p class="font-light text-gray-400 mt-2">Protección para ti, para otros y para siempre.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold tracking-wider uppercase text-gray-400">Navegación</h5>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#porque-protect4life" class="font-light hover:text-brand-green">¿Por qué Protect4Life?</a></li>
+                        <li><a href="#productos" class="font-light hover:text-brand-green">Productos</a></li>
+                        <li><a href="#impacto-social" class="font-light hover:text-brand-green">Impacto Social</a></li>
+                        <li><a href="#garantia" class="font-light hover:text-brand-green">Garantía</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold tracking-wider uppercase text-gray-400">Síguenos</h5>
+                    <div class="flex space-x-6 mt-4 justify-center md:justify-start">
+                        <a href="#" class="text-gray-400 hover:text-brand-green" aria-label="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C8.74 2 8.279.014 6.64.088 5.006.16 3.93 1.23 3.194 2.864c-.736 1.636-.8 2.1-.888 5.358-.087 3.26-.014 3.72.088 5.356.16 1.636 1.23 2.708 2.864 3.444 1.636.736 2.1.8 5.358.888 3.258.087 3.72.014 5.356-.088 1.636-.16 2.708-1.23 3.444-2.864.736-1.636.8-2.1.888-5.358.087-3.26.014-3.72-.088-5.356-.16-1.636-1.23-2.708-2.864-3.444C15.72.986 15.26 1.002 12 1zm0 3.877c3.12 0 3.48.013 4.7.068 1.15.052 1.8.24 2.228.4.524.2 1.04.564 1.458 1.04.48.48.84 1 1.04 1.458.16.428.348 1.078.4 2.228.055 1.22.067 1.58.067 4.7s-.012 3.48-.067 4.7c-.052 1.15-.24 1.8-.4 2.228a3.98 3.98 0 01-1.04 1.458c-.48.48-1 .84-1.458 1.04-.428.16-1.078.348-2.228.4-1.22.055-1.58.067-4.7.067s-3.48-.012-4.7-.067c-1.15-.052-1.8-.24-2.228-.4a3.98 3.98 0 01-1.458-1.04c-.48-.48-.84-1-1.04-1.458-.16-.428-.348-1.078-.4-2.228C3.013 15.48 3 15.12 3 12s.013-3.48.067-4.7c.052-1.15.24-1.8.4-2.228.2-.524.564-1.04 1.04-1.458.48-.48 1-.84 1.458-1.04.428-.16 1.078-.348 2.228-.4C8.52 3.013 8.88 3 12 3zm0 1.942c-3.328 0-6.023 2.695-6.023 6.023S8.672 18.023 12 18.023c3.328 0 6.023-2.695 6.023-6.023S15.328 4.942 12 4.942zM12 16a4 4 0 110-8 4 4 0 010 8zm4.838-8.88a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-brand-green" aria-label="TikTok">
+                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.38 1.92-3.54 2.96-5.83 2.96-2.25 0-4.35-1.02-5.7-2.9-1.05-1.45-1.4-3.18-1.4-4.88 0-.02 0-.04 0-.07.02-3.18.02-6.36.01-9.54l-2.02-.01C1.98 10.28 2 8.24 2 6.2c.43-.02 1.13-.01 1.54-.02.04-1.3.02-2.6.04-3.9.01-.15.02-.3.04-.45.08-1.35.63-2.68 1.6-3.66C6.12.18 7.39 0 8.78 0c1.58.01 3.17.02 4.74.02z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-brand-green" aria-label="LinkedIn">
+                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                        </a>
+                    </div>
+                 </div>
+            </div>
+            <div class="mt-12 border-t border-brand-gray pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2025 Protect4Life por Integrity México. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+        const headerNav = document.getElementById('header-nav');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            menuOpenIcon.classList.toggle('hidden');
+            menuCloseIcon.classList.toggle('hidden');
+            const isExpanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
+            mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                toggleMenu();
+            }
+        });
+        
+        // Optional: Change header height on scroll for a nice effect
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                headerNav.classList.remove('h-24');
+            } else {
+                headerNav.classList.add('h-24');
+            }
+        };
+    </script>
+</body>
+</html>
+
